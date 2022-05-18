@@ -9,9 +9,18 @@ import UIKit
 
 class collectionCell: UICollectionViewCell {
 
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblStatus: UILabel!
+    @IBOutlet weak var lblSpecies: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
+    func configureCell(){
+        
+        
+    }
 }

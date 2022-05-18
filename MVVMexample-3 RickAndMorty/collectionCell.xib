@@ -22,15 +22,45 @@
                             <constraint firstAttribute="height" constant="175" id="cbG-Yg-JHt"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fa-go-lzo">
+                        <rect key="frame" x="15" y="203" width="45" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUv-I9-wti">
+                        <rect key="frame" x="15" y="226" width="49" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Species" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3S-PK-5sV">
+                        <rect key="frame" x="15" y="253" width="61" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="8Fa-go-lzo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="54O-LY-Zoh"/>
                 <constraint firstItem="ZEE-fP-Q4H" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="Nzz-Po-dfP"/>
+                <constraint firstItem="f3S-PK-5sV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="Q1H-TT-Kwe"/>
+                <constraint firstItem="f3S-PK-5sV" firstAttribute="top" secondItem="GUv-I9-wti" secondAttribute="bottom" constant="6" id="SrM-yk-V27"/>
+                <constraint firstItem="8Fa-go-lzo" firstAttribute="top" secondItem="ZEE-fP-Q4H" secondAttribute="bottom" constant="13" id="Y36-N1-l5k"/>
                 <constraint firstItem="ZEE-fP-Q4H" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="YDv-AP-wXo"/>
+                <constraint firstItem="GUv-I9-wti" firstAttribute="top" secondItem="8Fa-go-lzo" secondAttribute="bottom" constant="2" id="brm-9M-yrG"/>
                 <constraint firstAttribute="trailing" secondItem="ZEE-fP-Q4H" secondAttribute="trailing" constant="15" id="orA-fp-tIS"/>
+                <constraint firstItem="GUv-I9-wti" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="q76-15-678"/>
             </constraints>
             <size key="customSize" width="228" height="329"/>
+            <connections>
+                <outlet property="imgView" destination="ZEE-fP-Q4H" id="Okt-ZV-Cg0"/>
+                <outlet property="lblName" destination="8Fa-go-lzo" id="7MH-qK-8b9"/>
+                <outlet property="lblSpecies" destination="f3S-PK-5sV" id="VaM-CK-Gs5"/>
+                <outlet property="lblStatus" destination="GUv-I9-wti" id="V8i-1x-IlM"/>
+            </connections>
             <point key="canvasLocation" x="260.86956521739131" y="223.32589285714283"/>
         </collectionViewCell>
     </objects>
