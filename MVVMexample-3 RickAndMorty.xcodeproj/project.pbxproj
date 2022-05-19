@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		71773552283679F90015DF10 /* RickAndMortyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71773551283679F90015DF10 /* RickAndMortyCollectionCell.swift */; };
+		7177355428367ECB0015DF10 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177355328367ECB0015DF10 /* Models.swift */; };
 		7195A10928353D440064BAC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7195A10828353D440064BAC8 /* AppDelegate.swift */; };
 		7195A10B28353D440064BAC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7195A10A28353D440064BAC8 /* SceneDelegate.swift */; };
 		7195A10D28353D440064BAC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7195A10C28353D440064BAC8 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		71773551283679F90015DF10 /* RickAndMortyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyCollectionCell.swift; sourceTree = "<group>"; };
+		7177355328367ECB0015DF10 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		7195A10528353D440064BAC8 /* MVVMexample-3 RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVMexample-3 RickAndMorty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7195A10828353D440064BAC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7195A10A28353D440064BAC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				7195A11128353D460064BAC8 /* Assets.xcassets */,
 				7195A11328353D460064BAC8 /* LaunchScreen.storyboard */,
 				7195A11628353D460064BAC8 /* Info.plist */,
+				7177355328367ECB0015DF10 /* Models.swift */,
 			);
 			path = "MVVMexample-3 RickAndMorty";
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				7195A10D28353D440064BAC8 /* ViewController.swift in Sources */,
 				7195A10928353D440064BAC8 /* AppDelegate.swift in Sources */,
 				7195A10B28353D440064BAC8 /* SceneDelegate.swift in Sources */,
+				7177355428367ECB0015DF10 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
