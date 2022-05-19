@@ -18,15 +18,26 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UICollectionViewDelegate , UICollectionViewDataSource {
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 12
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! RickAndMortyCollectionCell
+        cell.configureCell()
+        return cell
     }
     
     
 }
-
+extension ViewController:UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let newWidth = ( self.view.frame.size.width / 2) - 24
+        
+        
+        return CGSize(width: newWidth , height: 275)
+    }
+    
+}
