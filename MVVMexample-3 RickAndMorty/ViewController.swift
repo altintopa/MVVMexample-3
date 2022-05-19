@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var sgmType: UISegmentedControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var DataArr = [RickAndMortyModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,6 +23,7 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 12
+        //return DataArr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -31,6 +34,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     
 }
+
 extension ViewController:UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
