@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wh6-wq-xUb">
-                                <rect key="frame" x="0.0" y="220" width="414" height="642"/>
+                                <rect key="frame" x="0.0" y="210" width="414" height="652"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="10" id="B0J-uV-8uq">
                                     <size key="itemSize" width="195" height="275"/>
@@ -86,11 +86,11 @@
                                 </connections>
                             </collectionView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="TTw-e3-rgo">
-                                <rect key="frame" x="0.0" y="100" width="414" height="51"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="a2r-3x-hXM">
-                                <rect key="frame" x="50" y="171" width="314" height="32"/>
+                                <rect key="frame" x="65" y="161" width="284" height="32"/>
                                 <segments>
                                     <segment title="Grid"/>
                                     <segment title="List"/>
@@ -104,12 +104,12 @@
                             <constraint firstItem="wh6-wq-xUb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4BM-AX-2ZE"/>
                             <constraint firstItem="TTw-e3-rgo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CU5-V7-KsH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wh6-wq-xUb" secondAttribute="trailing" id="N72-PS-oHw"/>
-                            <constraint firstItem="a2r-3x-hXM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Nbt-cX-hHO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a2r-3x-hXM" secondAttribute="trailing" constant="50" id="Nfm-ZI-rfe"/>
+                            <constraint firstItem="a2r-3x-hXM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="Nbt-cX-hHO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a2r-3x-hXM" secondAttribute="trailing" constant="65" id="Nfm-ZI-rfe"/>
                             <constraint firstItem="TTw-e3-rgo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QwX-yY-Y51"/>
                             <constraint firstItem="wh6-wq-xUb" firstAttribute="top" secondItem="a2r-3x-hXM" secondAttribute="bottom" constant="18" id="QyD-6R-HC4"/>
-                            <constraint firstItem="a2r-3x-hXM" firstAttribute="top" secondItem="TTw-e3-rgo" secondAttribute="bottom" constant="20" id="gdx-X8-JJJ"/>
-                            <constraint firstItem="TTw-e3-rgo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="tRw-sm-BMs"/>
+                            <constraint firstItem="a2r-3x-hXM" firstAttribute="top" secondItem="TTw-e3-rgo" secondAttribute="bottom" constant="12" id="gdx-X8-JJJ"/>
+                            <constraint firstItem="TTw-e3-rgo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="tRw-sm-BMs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Rick And Morty" id="DKp-nK-dk4"/>

@@ -18,9 +18,6 @@ protocol RickAndMortyServiceProtocol {
 class RickAndMortyService : RickAndMortyServiceProtocol {
     func fetchAllData(isSuccess: @escaping ([RickAndMortyModel]) -> Void, isError: @escaping (String) -> Void) {
         
-        //let session = URLSession.shared
-        //let url = URL(string: ServiceConstants.RickUrl.url.rawValue)
-        
         let task = URLSession.shared.dataTask(with: URL(string: ServiceConstants.RickUrl.url.rawValue)!) { (data, response, error) in
             if error != nil {
                 print("Nope !")

@@ -21,7 +21,7 @@ class ViewController: UIViewController, RickAndMortyServiceProtocol {
         super.viewDidLoad()
         
     }
-    
+    /// Bu kısıma bakılacak !
     func fetchAllData(isSuccess: @escaping ([RickAndMortyModel]) -> Void, isError: @escaping (String) -> Void) {
         
         let task = URLSession.shared.dataTask(with: URL(string: ServiceConstants.RickUrl.url.rawValue)!) { (data, response, error) in
@@ -46,18 +46,6 @@ class ViewController: UIViewController, RickAndMortyServiceProtocol {
         task.resume()
     }
 
-    
-    func getData(){
-        deneme?.fetchAllData(isSuccess: { data in
-            DispatchQueue.main.async {
-                self.DataArr = data
-            }
-        }, isError: { error in
-            print("Hata aq")
-        })
-        
-    }
-    
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -65,7 +53,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         if DataArr.count > 0 {
             return DataArr.count
         } else {
-            return 12
+            return 20
         }
     }
     
@@ -84,7 +72,7 @@ extension ViewController:UICollectionViewDelegateFlowLayout {
         let newWidth = ( self.view.frame.size.width / 2) - 24
         
         
-        return CGSize(width: newWidth , height: 275)
+        return CGSize(width: newWidth , height: 250)
     }
     
 }
