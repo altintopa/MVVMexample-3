@@ -19,19 +19,20 @@ class RickAndMortyService : RickAndMortyServiceProtocol {
     func fetchAllData(onSuccess: @escaping ([RickAndMortyModel]) -> Void, onError: @escaping (String) -> Void) {
         
         //let session = URLSession.shared
-        let url = URL(string: ServiceConstants.RickUrl.url.rawValue)
+        //let url = URL(string: ServiceConstants.RickUrl.url.rawValue)
         
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: URL(string: ServiceConstants.RickUrl.url.rawValue)!) { (data, response, error) in
             if error != nil {
-                print("skdnf")
+                print("Nope !")
             }else {
                 if data != nil {
                     do {
                         let response = try JSONDecoder().decode([RickAndMortyModel].self, from: data!)
-                        
+                        onSuccess(response)
                     }
                     catch {
                         print(" NOOO !")
+                        onError(ServiceConstants.Error.error.rawValue)
                     }
                 }
             }
