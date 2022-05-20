@@ -10,13 +10,13 @@ import UIKit
 
 protocol RickAndMortyServiceProtocol {
     func fetchAllData(
-         onSuccess: @escaping ([RickAndMortyModel]) -> Void,
-         onError: @escaping (String) -> Void
+         isSuccess: @escaping ([RickAndMortyModel]) -> Void,
+         isError: @escaping (String) -> Void
          )
 }
 
 class RickAndMortyService : RickAndMortyServiceProtocol {
-    func fetchAllData(onSuccess: @escaping ([RickAndMortyModel]) -> Void, onError: @escaping (String) -> Void) {
+    func fetchAllData(isSuccess: @escaping ([RickAndMortyModel]) -> Void, isError: @escaping (String) -> Void) {
         
         //let session = URLSession.shared
         //let url = URL(string: ServiceConstants.RickUrl.url.rawValue)
@@ -28,16 +28,15 @@ class RickAndMortyService : RickAndMortyServiceProtocol {
                 if data != nil {
                     do {
                         let response = try JSONDecoder().decode([RickAndMortyModel].self, from: data!)
-                        onSuccess(response)
+                        isSuccess(response)
                     }
                     catch {
                         print(" NOOO !")
-                        onError(ServiceConstants.Error.error.rawValue)
+                        isError(ServiceConstants.Error.error.rawValue)
                     }
                 }
             }
         }
         task.resume()
     }
-    
 }

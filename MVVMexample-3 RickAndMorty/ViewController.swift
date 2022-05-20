@@ -7,21 +7,54 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+
+class ViewController: UIViewController, RickAndMortyServiceProtocol {
 
     @IBOutlet weak var sgmType: UISegmentedControl!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var deneme : RickAndMortyServiceProtocol?
     
     var DataArr = [RickAndMortyModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
+    func fetchAllData(isSuccess: @escaping ([RickAndMortyModel]) -> Void, isError: @escaping (String) -> Void) {
+        
+        let task = URLSession.shared.dataTask(with: URL(string: ServiceConstants.RickUrl.url.rawValue)!) { (data, response, error) in
+            if error != nil {
+                print("Nope !")
+            }else {
+                if data != nil {
+                    do {
+                        let response = try JSONDecoder().decode([RickAndMortyModel].self, from: data!)
+                        DispatchQueue.main.async {
+                            self.DataArr = response
+                            self.collectionView.reloadData()
+                        }
+                    }
+                    catch {
+                        print(" NOOO !")
+                        isError(ServiceConstants.Error.error.rawValue)
+                    }
+                }
+            }
+        }
+        task.resume()
+    }
+
+    
     func getData(){
-        
-        let session = URLSession.shared
-        
+        deneme?.fetchAllData(isSuccess: { data in
+            DispatchQueue.main.async {
+                self.DataArr = data
+            }
+        }, isError: { error in
+            print("Hata aq")
+        })
         
     }
     
@@ -29,8 +62,11 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
-        //return DataArr.count
+        if DataArr.count > 0 {
+            return DataArr.count
+        } else {
+            return 12
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
