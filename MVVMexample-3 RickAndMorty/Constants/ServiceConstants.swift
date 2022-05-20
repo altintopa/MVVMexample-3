@@ -15,6 +15,6 @@ final class ServiceConstants {
     }
     
     enum Error: String {
-        case error = "There is no Data"
+        case error = "There is something Wrong"
     }
 }

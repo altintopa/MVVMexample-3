@@ -28,7 +28,7 @@ class RickAndMortyService : RickAndMortyServiceProtocol {
                         isSuccess(response)
                     }
                     catch {
-                        print(" NOOO !")
+                        print(" N O O O !")
                         isError(ServiceConstants.Error.error.rawValue)
                     }
                 }

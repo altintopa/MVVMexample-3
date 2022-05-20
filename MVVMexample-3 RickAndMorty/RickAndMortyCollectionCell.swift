@@ -16,5 +16,6 @@ class RickAndMortyCollectionCell: UICollectionViewCell {
     func configureCell(){
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.black.cgColor
+        self.layer.backgroundColor = UIColor.green.cgColor
     }
 }

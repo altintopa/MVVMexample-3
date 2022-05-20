@@ -53,7 +53,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         if DataArr.count > 0 {
             return DataArr.count
         } else {
-            return 20
+            return 12
         }
     }
     
@@ -72,7 +72,7 @@ extension ViewController:UICollectionViewDelegateFlowLayout {
         let newWidth = ( self.view.frame.size.width / 2) - 24
         
         
-        return CGSize(width: newWidth , height: 250)
+        return CGSize(width: newWidth , height: 240)
     }
     
 }
