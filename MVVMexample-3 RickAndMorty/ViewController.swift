@@ -16,8 +16,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func getData(){
+        
+        let session = URLSession.shared
+        
         
     }
+    
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
