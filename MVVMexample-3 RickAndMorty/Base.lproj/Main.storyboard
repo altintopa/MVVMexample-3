@@ -71,6 +71,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="MO7-HY-RZw" secondAttribute="trailing" constant="16" id="xSi-4h-6ZV"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" red="0.58412179715167756" green="0.52606418230926222" blue="0.81788681492660986" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <size key="customSize" width="195" height="275"/>
                                         <connections>
                                             <outlet property="imgView" destination="MO7-HY-RZw" id="alv-RX-6IX"/>
