@@ -15,6 +15,21 @@ protocol RickAndMortyServiceProtocol {
          isError: @escaping (String) -> Void
          )
 }
+
+class RickAndMortyService: RickAndMortyServiceProtocol {
+    func fetchAllData(isSuccess onSuccess: @escaping ([RickAndMortyModel]) -> Void, isError onError: @escaping (String) -> Void) {
+        AF.request(ServiceConstants.RickUrl.url.rawValue, method: .get).responseDecodable(of: RickAndMorty.self) {
+            model in
+            guard let data = model.value else {
+                return onError(ServiceConstants.Error.error.rawValue)
+            }
+            let value = data.results
+            onSuccess(value)
+        }
+    }
+}
+
+
 //
 //class RickAndMortyService : RickAndMortyServiceProtocol {
 //    func fetchAllData(isSuccess: @escaping ([RickAndMortyModel]) -> Void, isError: @escaping (String) -> Void) {
@@ -38,16 +53,3 @@ protocol RickAndMortyServiceProtocol {
 //        task.resume()
 //    }
 //}
-
-class RickAndMortyService: RickAndMortyServiceProtocol {
-    func fetchAllData(isSuccess onSuccess: @escaping ([RickAndMortyModel]) -> Void, isError onError: @escaping (String) -> Void) {
-        AF.request(ServiceConstants.RickUrl.url.rawValue, method: .get).responseDecodable(of: RickAndMorty.self) {
-            model in
-            guard let data = model.value else {
-                return onError(ServiceConstants.Error.error.rawValue)
-            }
-            let value = data.results
-            onSuccess(value)
-        }
-    }
-}
