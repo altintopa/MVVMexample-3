@@ -8,7 +8,7 @@
 import UIKit
 
 
-class ViewController: UIViewController, RickAndMortyServiceProtocol {
+class ViewController: UIViewController {
 
     @IBOutlet weak var sgmType: UISegmentedControl!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -19,10 +19,14 @@ class ViewController: UIViewController, RickAndMortyServiceProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //getData()
     }
     
-    func fetchAllData(isSuccess: @escaping ([RickAndMortyModel]) -> Void, isError: @escaping (String) -> Void) {
+    override func viewWillAppear(_ animated: Bool) {
+        getDataFromApi()
+    }
+    
+    func getData(){
         
         let task = URLSession.shared.dataTask(with: URL(string: ServiceConstants.RickUrl.url.rawValue)!) { (data, response, error) in
             if error != nil {
@@ -37,13 +41,48 @@ class ViewController: UIViewController, RickAndMortyServiceProtocol {
                         }
                     }
                     catch {
-                        print(" NOOO !")
-                        isError(ServiceConstants.Error.error.rawValue)
+                        print("N O O O !")
                     }
                 }
             }
         }
         task.resume()
+
+        
+    }
+    
+    func getDataFromApi() {
+        
+        if DataArr.count < 1 {  /// wiilAppear ' da çalıştığından dolayı ekran her açıldığında  API'den data çekiyor. Engellemek için !
+          
+            let url = URL(string: "https://rickandmortyapi.com/api/character")
+            let session = URLSession.shared
+            
+            let task = session.dataTask(with: url!) { (data, response, error) in
+                if  error != nil {
+                    let alert = UIAlertController(title: "Nope !", message: error?.localizedDescription,preferredStyle: UIAlertController.Style.alert)
+                    
+                    let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+                    alert.addAction(okButton)
+                    self.present(alert, animated: true, completion: nil)
+                    
+                } else {
+                    if data != nil {
+                        do {
+                            let response = try JSONDecoder().decode([RickAndMortyModel].self, from: data!)
+                            DispatchQueue.main.async {
+                                self.DataArr = response
+                                self.collectionView.reloadData()
+                            }
+                            
+                        } catch {
+                            print(" NOOO ! ")
+                        }
+                    }
+                }
+            }
+            task.resume()
+        }
     }
 
 }

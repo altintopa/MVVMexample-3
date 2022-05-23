@@ -8,8 +8,22 @@
 import Foundation
 
 
+// MARK: - RickAndMorty
+struct RickAndMorty: Codable {
+    let info: Info
+    let results: [RickAndMortyModel]
+}
+
+// MARK: - Info
+struct Info: Codable {
+    let count, pages: Int
+    let next: String
+}
+
+
 struct RickAndMortyModel: Codable {
     
+    let id: Int
     let name: String
     let status: Status
     let species: Species

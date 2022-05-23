@@ -1,0 +1,6 @@
+framework module Pods_MVVMexample_3_RickAndMorty {
+  umbrella header "Pods-MVVMexample-3 RickAndMorty-umbrella.h"
+
+  export *
+  module * { export * }
+}
