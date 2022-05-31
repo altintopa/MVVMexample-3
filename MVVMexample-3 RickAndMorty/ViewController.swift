@@ -101,15 +101,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.configureCell()
         return cell
     }
-    
-    
 }
 
 extension ViewController:UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let newWidth = ( self.view.frame.size.width / 2) - 24
-        
         
         return CGSize(width: newWidth , height: 240)
     }
